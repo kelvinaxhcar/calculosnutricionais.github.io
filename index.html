@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CALCULO</title>
+	<link rel="stylesheet" href="default.css" />
+</head>
+
+<body>
+	<header>
+		<div class="topbar">
+			<h2>Os Incriveis Calculos de Kelvin, o Matematico.</h2>
+		</div>
+	</header>
+	<main>
+		<form name="calcform" method="dialog">
+			<fieldset>
+				<legend>Calcular o meu IMC</legend>
+
+				<label for="valor1">Digite o valor do peso:</label>
+				<input type="text" name="valor1" id="valor1" placeholder="Seu peso" title="Seu peso" required>
+
+				<label for="valor2">Digite o valor da altura:</label>
+				<input type="text" name="valor2" id="valor2" placeholder="Sua altura" required>
+
+				<label for="res">Resultado:</label>
+				<input tabindex="-0" type="text" name="res" id="res" readonly />
+
+				<label for="con">Conclusão:</label>
+				<input tabindex="-0" type="text" name="con" id="con" readonly />
+
+				<input class="botao" type="reset" value="Limpar">
+				<input class="botao" type="button" value="Calcular" onClick="calcular(document.calcform.value)" />
+			</fieldset>
+
+			<fieldset>
+				<legend>Indice massa gorda</legend>
+
+				<label for="idade">Digite o valor da idade:</label>
+				<input type="text" name="idade" id="idade" placeholder="Sua idade" required>
+
+				<label for="oper">Selecione M ou F:</label>
+				<select name="oper" id="oper" >
+					<option value="masculino">Masculino</option>
+					<option value="feminino">Feminino</option>
+				</select>
+
+				<label for="indice">Resultado:</label>
+				<input  name="indice" id="indice" readonly />
+
+				<label for="indiceCom">Conclusão:</label>
+				<input  name="indiceCom" id="indiceCom" readonly />
+
+				<input class="botao" type="button"  value="Calcular" onClick="calcularIndice(document.calcform.oper.value)" />
+			</fieldset>
+		</form>
+	</main>
+	<script src="soma.js" ></script>
+</body>
+
+</head>
+
+</html>
