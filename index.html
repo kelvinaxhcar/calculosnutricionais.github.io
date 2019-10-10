@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="default.css" />
 </head>
 
+<head>
+
 <body>
 	<header>
 		<div class="topbar">
@@ -19,66 +21,67 @@
 			<fieldset>
 				<legend>Massa óssea</legend>
 
-				<label for="peso">Peso:</label>
-				<input type="text" name="peso" id="peso" placeholder="Peso" required>
-
-				<label for="altura">Altura:<select name="opMedida3" id="opMedida3" >
-					<option value="centimetros">Centimetros</option>
-					<option value="metros">Metros</option>
-				</select></label>
+				<label for="altura">Altura:<select name="opMedida3" id="opMedida3">
+						<option value="centimetros">Centimetros</option>
+						<option value="metros">Metros</option>
+					</select></label>
 				<input type="text" name="altura" id="altura" placeholder="Altura" required>
 
-				<label for="punho">Diâmetro do punho:<select name="opMedida1" id="opMedida1" >
-					<option value="centimetros">Centimetros</option>
-					<option value="milimetros">Milimetros</option>
-					<option value=""></option>
-				</select></label>
+				<label for="punho">Diâmetro do punho:<select name="opMedida1" id="opMedida1">
+						<option value="centimetros">Centimetros</option>
+						<option value="milimetros">Milimetros</option>
+						<option value=""></option>
+					</select></label>
 				<input type="text" name="punho" id="punho" placeholder="Diâmetro do punho" required>
 
-				<label for="femur">Diâmetro do fêmur:<select name="opMedida2" id="opMedida2" >
-					<option value="centimetros">Centimetros</option>
-					<option value="milimetros">Milimetros</option>
-					<option value=""></option>
-				</select></label>
+				<label for="femur">Diâmetro do fêmur:<select name="opMedida2" id="opMedida2">
+						<option value="centimetros">Centimetros</option>
+						<option value="milimetros">Milimetros</option>
+						<option value=""></option>
+					</select></label>
 				<input type="text" name="femur" id="femur" placeholder="Diâmetro do fêmur" required>
 
 				<label for="resultado">Resultado:</label>
 				<input tabindex="-0" type="text" name="resultado" id="resultado" readonly />
 
-				
-
-				
 				<input class="botao" type="reset" value="Limpar">
-				<input class="botao" type="button" value="Calcular"
-				 onClick="calcular(document.calcform.opMedida1.value,
+				<input class="botao" type="button" value="Calcular" onClick="calcular(document.calcform.opMedida1.value,
 				 document.calcform.opMedida2.value,
-				 document.calcform.opMedida3.value)" 
-				 />
+				 document.calcform.opMedida3.value)" />
 			</fieldset>
 
 			<fieldset>
-				<legend>Indice massa gorda</legend>
+				<legend>Taxa metabolismo basal</legend>
 
-				<label for="idade">Digite o valor da idade:</label>
-				<input type="text" name="idade" id="idade" placeholder="Sua idade" required>
+				<label for="valor1">Digite o valor do peso:</label>
+				<input type="text" name="valor1" id="valor1" placeholder="Seu peso" title="Seu peso" required>
 
-				<label for="oper">Selecione M ou F:</label>
-				<select name="oper" id="oper" >
+				<label for="valor2">Digite o valor da altura:<select name="opAltura2" id="opAltura2">
+					<option value="centimetros">Centimetros</option>
+					<option value="metros">Metros</option>
+				</select></label>
+				<input type="text" name="valor2" id="valor2" placeholder="Sua altura" required>
+
+				<label for="valor3">Digite o valor da altura:</label>
+				<input type="text" name="valor3" id="valor3" placeholder="Sua idade" required>
+
+				<label>Escolha o genero:<select name="oper" id="oper">
 					<option value="masculino">Masculino</option>
 					<option value="feminino">Feminino</option>
-				</select>
+					
 
-				<label for="indice">Resultado:</label>
-				<input  name="indice" id="indice" readonly />
+				</select></label>
 
-				<label for="indiceCom">Conclusão:</label>
-				<input  name="indiceCom" id="indiceCom" readonly />
+				<label for="res">Resultado:</label>
+				<input tabindex="-0" type="text" name="res" id="res" readonly />
 
-				<input class="botao" type="button"  value="Calcular" onClick="calcularIndice(document.calcform.oper.value)" />
+				<input class="botao" type="reset" value="Limpar">
+				<input class="botao" type="button" value="Calcular" onClick="calcular2(document.calcform.oper.value,
+				document.calcform.opAltura2.value)" />
 			</fieldset>
 		</form>
 	</main>
-	<script src="soma.js" ></script>
+	<script src="soma.js"></script>
 </body>
 
 </head>
