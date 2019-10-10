@@ -17,22 +17,43 @@
 	<main>
 		<form name="calcform" method="dialog">
 			<fieldset>
-				<legend>Calcular o meu IMC</legend>
+				<legend>Massa óssea</legend>
 
-				<label for="valor1">Digite o valor do peso:</label>
-				<input type="text" name="valor1" id="valor1" placeholder="Seu peso" title="Seu peso" required>
+				<label for="peso">Peso:</label>
+				<input type="text" name="peso" id="peso" placeholder="Peso" required>
 
-				<label for="valor2">Digite o valor da altura:</label>
-				<input type="text" name="valor2" id="valor2" placeholder="Sua altura" required>
+				<label for="altura">Altura:<select name="opMedida3" id="opMedida3" >
+					<option value="centimetros">Centimetros</option>
+					<option value="metros">Metros</option>
+				</select></label>
+				<input type="text" name="altura" id="altura" placeholder="Altura" required>
 
-				<label for="res">Resultado:</label>
-				<input tabindex="-0" type="text" name="res" id="res" readonly />
+				<label for="punho">Diâmetro do punho:<select name="opMedida1" id="opMedida1" >
+					<option value="centimetros">Centimetros</option>
+					<option value="milimetros">Milimetros</option>
+					<option value=""></option>
+				</select></label>
+				<input type="text" name="punho" id="punho" placeholder="Diâmetro do punho" required>
 
-				<label for="con">Conclusão:</label>
-				<input tabindex="-0" type="text" name="con" id="con" readonly />
+				<label for="femur">Diâmetro do fêmur:<select name="opMedida2" id="opMedida2" >
+					<option value="centimetros">Centimetros</option>
+					<option value="milimetros">Milimetros</option>
+					<option value=""></option>
+				</select></label>
+				<input type="text" name="femur" id="femur" placeholder="Diâmetro do fêmur" required>
 
+				<label for="resultado">Resultado:</label>
+				<input tabindex="-0" type="text" name="resultado" id="resultado" readonly />
+
+				
+
+				
 				<input class="botao" type="reset" value="Limpar">
-				<input class="botao" type="button" value="Calcular" onClick="calcular(document.calcform.value)" />
+				<input class="botao" type="button" value="Calcular"
+				 onClick="calcular(document.calcform.opMedida1.value,
+				 document.calcform.opMedida2.value,
+				 document.calcform.opMedida3.value)" 
+				 />
 			</fieldset>
 
 			<fieldset>
