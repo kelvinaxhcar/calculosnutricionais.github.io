@@ -25,45 +25,46 @@
 						<option value="centimetros">Centimetros</option>
 						<option value="metros">Metros</option>
 					</select></label>
-				<input type="text" name="altura" id="altura" placeholder="Altura" required>
+				<input type="text" name="altura" onkeyup="somenteNumeros(this);" maxlength="99" id="altura" placeholder="Altura" required>
 
 				<label for="punho">Diâmetro do punho:<select name="opMedida1" id="opMedida1">
 						<option value="centimetros">Centimetros</option>
 						<option value="milimetros">Milimetros</option>
 						<option value=""></option>
 					</select></label>
-				<input type="text" name="punho" id="punho" placeholder="Diâmetro do punho" required>
+				<input type="text" name="punho" onkeyup="somenteNumeros(this);" maxlength="99" id="punho" placeholder="Diâmetro do punho" required>
 
 				<label for="femur">Diâmetro do fêmur:<select name="opMedida2" id="opMedida2">
 						<option value="centimetros">Centimetros</option>
 						<option value="milimetros">Milimetros</option>
 						<option value=""></option>
 					</select></label>
-				<input type="text" name="femur" id="femur" placeholder="Diâmetro do fêmur" required>
+				<input type="text" name="femur" onkeyup="somenteNumeros(this);" maxlength="99" id="femur" placeholder="Diâmetro do fêmur" required>
 
 				<label for="resultado">Resultado:</label>
 				<input tabindex="-0" type="text" name="resultado" id="resultado" readonly />
 
-				<input class="botao" type="reset" value="Limpar">
+				<input class="botao" type="button" value="Limpar" onclick="apagaForm()">
 				<input class="botao" type="button" value="Calcular" onClick="calcular(document.calcform.opMedida1.value,
 				 document.calcform.opMedida2.value,
 				 document.calcform.opMedida3.value)" />
+				<figcaption>MO = (Altura<sup>2</sup> x Punho x Fêmur x 400)<sup> 0,712</sup> x 3,02</figcaption>
 			</fieldset>
 
 			<fieldset>
 				<legend>Taxa metabolismo basal</legend>
 
 				<label for="valor1">Digite o valor do peso:</label>
-				<input type="text" name="valor1" id="valor1" placeholder="Seu peso" title="Seu peso" required>
+				<input type="text" name="valor1" onkeyup="somenteNumeros(this);" maxlength="99" id="valor1" placeholder="Seu peso" title="Seu peso" required>
 
 				<label for="valor2">Digite o valor da altura:<select name="opAltura2" id="opAltura2">
 					<option value="centimetros">Centimetros</option>
 					<option value="metros">Metros</option>
 				</select></label>
-				<input type="text" name="valor2" id="valor2" placeholder="Sua altura" required>
+				<input type="text" name="valor2" onkeyup="somenteNumeros(this);" maxlength="99" id="valor2" placeholder="Sua altura" required>
 
 				<label for="valor3">Digite o valor da idade:</label>
-				<input type="text" name="valor3" id="valor3" placeholder="Sua idade" required>
+				<input type="text" name="valor3" onkeyup="somenteNumeros(this);" maxlength="99" id="valor3" placeholder="Sua idade" required>
 
 				<label>Escolha o genero:<select name="oper" id="oper">
 					<option value="masculino">Masculino</option>
@@ -75,7 +76,7 @@
 				<label for="res">Resultado:</label>
 				<input tabindex="-0" type="text" name="res" id="res" readonly />
 
-				<input class="botao" type="reset" value="Limpar">
+				<input class="botao" type="button" value="Limpar" onclick="apagaForm1()">
 				<input class="botao" type="button" value="Calcular" onClick="calcular2(document.calcform.oper.value,
 				document.calcform.opAltura2.value)" />
 			</fieldset>

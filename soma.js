@@ -49,3 +49,28 @@ function calcular2(oper,opAltura2) {
     }
   }
 }
+
+//----------------------------------------------------------------------------------
+
+function apagaForm() {
+	document.calcform.altura.value="";
+  document.calcform.punho.value="";
+  document.calcform.femur.value="";
+  document.calcform.resultado.value="";
+}
+
+function apagaForm1() {
+	document.calcform.valor1.value="";
+  document.calcform.valor2.value="";
+  document.calcform.valor3.value="";
+  document.calcform.res.value="";
+}
+
+function somenteNumeros(num) {
+  var er = /[^0-9.]/;
+  er.lastIndex = 0;
+  var campo = num;
+  if (er.test(campo.value)) {
+    campo.value = "";
+  }
+}
