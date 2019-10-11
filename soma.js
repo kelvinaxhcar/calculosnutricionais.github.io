@@ -1,3 +1,5 @@
+//-------------------------------------Massa óssea---------------------------------------------
+
 function calcular(opMedida1, opMedida2, opMedida3) {
   var altura = document.calcform.altura.value;
   var punho = document.calcform.punho.value;
@@ -31,7 +33,7 @@ function calcular(opMedida1, opMedida2, opMedida3) {
 
 }
 
-//----------------------------------------------------------------------------------
+//------------------------------------Taxa metabolismo Basal----------------------------------------------
 function calcular2(oper,opAltura2) {
   var valor1 = document.calcform.valor1.value;
   var valor2 = document.calcform.valor2.value;
@@ -46,6 +48,45 @@ function calcular2(oper,opAltura2) {
   } else {
     if (oper == "feminino") {
       document.calcform.res.value = ((9.6 * valor1) + (1.8 * valor2) - (4.7 * valor3) + 665);
+    }
+  }
+}
+
+//------------------------------Cálculo do Gasto Energético Basal (GEB)---------------------------------------------
+
+function calcular3(oper2,opAltura3) {
+  var valor4 = document.calcform.valor4.value;
+  var valor5 = document.calcform.valor5.value;
+  var valor6 = document.calcform.valor6.value;
+
+  if (opAltura3 == "metros") {
+    valor5 = valor5 / 0.010000;
+  }
+
+  if (oper2 == "masculino") {
+    document.calcform.res2.value = (66.5 + (13.8 * valor4) + (5.0 * valor5) - (6.8 * valor6));
+  } else {
+    if (oper2 == "feminino") {
+      document.calcform.res2.value = (655 +(9.6 * valor4) + (1.7 * valor5) - (4.7 * valor6));
+    }
+  }
+}
+
+//------------------------------Estimativa de peso---------------------------------------------
+
+function calcular4(oper3) {
+  var valor7 = document.calcform.valor7.value;
+  var valor8 = document.calcform.valor8.value;
+  var valor9 = document.calcform.valor9.value;
+  var valor10 = document.calcform.valor10.value;
+
+ 
+
+  if (oper3 == "masculino") {
+    document.calcform.res3.value = ((0.98 * valor7) + (1.16 * valor8) + (1.73 * valor9) + (0.37 * valor10) - 81.69);
+  } else {
+    if (oper3 == "feminino") {
+      document.calcform.res3.value = ((1.27 * valor7) + (0.87 * valor8) + (0.98 * valor9) + (0.4 * valor10) - 62.35);
     }
   }
 }
@@ -66,11 +107,29 @@ function apagaForm1() {
   document.calcform.res.value="";
 }
 
-function somenteNumeros(num) {
-  var er = /[^0-9.]/;
-  er.lastIndex = 0;
-  var campo = num;
-  if (er.test(campo.value)) {
-    campo.value = "";
-  }
+function apagaForm2() {
+	document.calcform.valor4.value="";
+  document.calcform.valor5.value="";
+  document.calcform.valor6.value="";
+  document.calcform.res2.value="";
 }
+
+function apagaForm3() {
+	document.calcform.valor7.value="";
+  document.calcform.valor8.value="";
+  document.calcform.valor9.value="";
+  document.calcform.valor10.value="";
+  document.calcform.res3.value="";
+}
+
+
+
+
+function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+        }
+    }

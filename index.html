@@ -25,21 +25,21 @@
 						<option value="centimetros">Centimetros</option>
 						<option value="metros">Metros</option>
 					</select></label>
-				<input type="text" name="altura" onkeyup="somenteNumeros(this);" maxlength="99" id="altura" placeholder="Altura" required>
+				<input type="text" name="altura" onkeyup="somenteNumeros(this);" maxlength="5" id="altura" placeholder="Altura" required>
 
 				<label for="punho">Diâmetro do punho:<select name="opMedida1" id="opMedida1">
 						<option value="centimetros">Centimetros</option>
 						<option value="milimetros">Milimetros</option>
 						<option value=""></option>
 					</select></label>
-				<input type="text" name="punho" onkeyup="somenteNumeros(this);" maxlength="99" id="punho" placeholder="Diâmetro do punho" required>
+				<input type="text" name="punho" onkeyup="somenteNumeros(this);" maxlength="5" id="punho" placeholder="Diâmetro do punho" required>
 
 				<label for="femur">Diâmetro do fêmur:<select name="opMedida2" id="opMedida2">
 						<option value="centimetros">Centimetros</option>
 						<option value="milimetros">Milimetros</option>
 						<option value=""></option>
 					</select></label>
-				<input type="text" name="femur" onkeyup="somenteNumeros(this);" maxlength="99" id="femur" placeholder="Diâmetro do fêmur" required>
+				<input type="text" name="femur" onkeyup="somenteNumeros(this);" maxlength="5" id="femur" placeholder="Diâmetro do fêmur" required>
 
 				<label for="resultado">Resultado:</label>
 				<input tabindex="-0" type="text" name="resultado" id="resultado" readonly />
@@ -52,34 +52,102 @@
 			</fieldset>
 
 			<fieldset>
-				<legend>Taxa metabolismo basal</legend>
+					<legend>Taxa metabolismo Basal</legend>
+	
+					<label for="valor1">Digite o valor do peso:</label>
+					<input type="text" name="valor1" onkeyup="somenteNumeros(this);" maxlength="5" id="valor1" placeholder="Seu peso" title="Seu peso" required>
+	
+					<label for="valor2">Digite o valor da altura:<select name="opAltura2" id="opAltura2">
+						<option value="centimetros">Centimetros</option>
+						<option value="metros">Metros</option>
+					</select></label>
+					<input type="text" name="valor2" onkeyup="somenteNumeros(this);" maxlength="5" id="valor2" placeholder="Sua altura" required>
+	
+					<label for="valor3">Digite o valor da idade:</label>
+					<input type="text" name="valor3" onkeyup="somenteNumeros(this);" maxlength="5" id="valor3" placeholder="Sua idade" required>
+	
+					<label>Escolha o genero:<select name="oper" id="oper">
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
+						
+	
+					</select></label>
+	
+					<label for="res">Resultado:</label>
+					<input tabindex="-0" type="text" name="res" id="res" readonly />
+	
+					<input class="botao" type="button" value="Limpar" onclick="apagaForm1()">
+					<input class="botao" type="button" value="Calcular" onClick="calcular2(document.calcform.oper.value,
+					document.calcform.opAltura2.value)" />
+					<figcaption>Homens: ((13.7 * Peso) + (5.0 * Altura) - (6.8 * Idade) + 66)</figcaption>
+					<figcaption>Mulheres: ((9.6 * Peso) + (1.8 * Altura) - (4.7 * Idade) + 665)</figcaption>
+				</fieldset>
 
-				<label for="valor1">Digite o valor do peso:</label>
-				<input type="text" name="valor1" onkeyup="somenteNumeros(this);" maxlength="99" id="valor1" placeholder="Seu peso" title="Seu peso" required>
+			<fieldset>
+					<legend>Cálculo do Gasto Energético Basal (GEB)</legend>
+	
+					<label for="valor4">Digite o valor do peso:</label>
+					<input type="text" name="valor4" onkeyup="somenteNumeros(this);" maxlength="5" id="valor4" placeholder="Seu peso" title="Seu peso" required>
+	
+					<label for="valor5">Digite o valor da altura:<select name="opAltura3" id="opAltura3">
+						<option value="centimetros">Centimetros</option>
+						<option value="metros">Metros</option>
+					</select></label>
+					<input type="text" name="valor5" onkeyup="somenteNumeros(this);" maxlength="5" id="valor5" placeholder="Sua altura" required>
+	
+					<label for="valor6">Digite o valor da idade:</label>
+					<input type="text" name="valor6" onkeyup="somenteNumeros(this);" maxlength="5" id="valor6" placeholder="Sua idade" required>
+	
+					<label>Escolha o genero:<select name="oper2" id="oper2">
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
+						
+	
+					</select></label>
+	
+					<label for="res2">Resultado:</label>
+					<input tabindex="-0" type="text" name="res2" id="res2" readonly />
+	
+					<input class="botao" type="button" value="Limpar" onclick="apagaForm2()">
+					<input class="botao" type="button" value="Calcular" onClick="calcular3(document.calcform.oper2.value,
+					document.calcform.opAltura3.value)" />
 
-				<label for="valor2">Digite o valor da altura:<select name="opAltura2" id="opAltura2">
-					<option value="centimetros">Centimetros</option>
-					<option value="metros">Metros</option>
-				</select></label>
-				<input type="text" name="valor2" onkeyup="somenteNumeros(this);" maxlength="99" id="valor2" placeholder="Sua altura" required>
+					<figcaption>Homens: (66,47 + (13,75 x Peso) + (5 x Altura) - (6,76 x Idade))</figcaption>
+					<figcaption>Mulheres: (655 +(9,6 x Peso) + (1,7 x Altura) – (4,7 x Idade))</figcaption>
+				</fieldset>
 
-				<label for="valor3">Digite o valor da idade:</label>
-				<input type="text" name="valor3" onkeyup="somenteNumeros(this);" maxlength="99" id="valor3" placeholder="Sua idade" required>
+				<fieldset>
+						<legend>Estimativa de peso</legend>
+		
+						<label for="valor7">Circunferência da panturrilha (cm):</label>
+						<input type="text" name="valor7" onkeyup="somenteNumeros(this);" maxlength="5" id="valor7" placeholder="Circunferência da panturrilha" title="Seu peso" required>
+		
+						<label for="valor8">Altura do joelho (cm):</label>
+						<input type="text" name="valor8" onkeyup="somenteNumeros(this);" maxlength="8" id="valor8" placeholder="Altura do joelho" required>
+		
+						<label for="valor9">Circunferência do braço (cm):</label>
+						<input type="text" name="valor9" onkeyup="somenteNumeros(this);" maxlength="5" id="valor9" placeholder="Circunferência do braço" required>
 
-				<label>Escolha o genero:<select name="oper" id="oper">
-					<option value="masculino">Masculino</option>
-					<option value="feminino">Feminino</option>
-					
+						<label for="valor10">Prega cutânea subescapular (mm):</label>
+						<input type="text" name="valor10" onkeyup="somenteNumeros(this);" maxlength="5" id="valor10" placeholder="Prega cutânea subescapular" required>
+		
+						<label>Escolha o genero:<select name="oper3" id="oper3">
+							<option value="masculino">Masculino</option>
+							<option value="feminino">Feminino</option>
+							
+		
+						</select></label>
+		
+						<label for="res3">Resultado:</label>
+						<input tabindex="-0" type="text" name="res3" id="res3" readonly />
+		
+						<input class="botao" type="button" value="Limpar" onclick="apagaForm3()">
+						<input class="botao" type="button" value="Calcular" onClick="calcular4(document.calcform.oper3.value)" />
+	
+						<figcaption>Homens: ((0.98 * Panturrilha) + (1.16 * Joelho) + (1.73 * Braço) + (0.37 * Subescapular) - 81.69)</figcaption>
+						<figcaption>Mulheres: ((1.27 * Panturrilha) + (0.87 * Joelho) + (0.98 * Braço) + (0.4 * Subescapular) - 62.35)</figcaption>
+					</fieldset>
 
-				</select></label>
-
-				<label for="res">Resultado:</label>
-				<input tabindex="-0" type="text" name="res" id="res" readonly />
-
-				<input class="botao" type="button" value="Limpar" onclick="apagaForm1()">
-				<input class="botao" type="button" value="Calcular" onClick="calcular2(document.calcform.oper.value,
-				document.calcform.opAltura2.value)" />
-			</fieldset>
 		</form>
 	</main>
 	<script src="soma.js"></script>
